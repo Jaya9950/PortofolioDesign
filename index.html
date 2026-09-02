@@ -3,13 +3,1632 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Jaya</title>
+
+    <title>Anggi Syahputra Jaya | Portfolio</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2dea9cf223.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #2563eb;
+        }
+
+        .hero-text h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .hero-text p {
+            max-width: 600px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            border: 1px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 380px;
+            margin: auto;
+        }
+
+        .hero-image img {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .info-box span {
+            color: #666;
+        }
+
+
+        /* =========================
+           EXPERTISE
+        ========================== */
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e5e5e5;
+            transition: 0.3s;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .expertise-card i {
+            font-size: 30px;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .expertise-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .expertise-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PROJECT / EXPERIENCE
+        ========================== */
+
+        .projects {
+            display: grid;
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 18px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            min-height: 350px;
+        }
+
+
+        /* =========================
+           CAROUSEL FOTO
+        ========================== */
+
+        .project-gallery {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            overflow: hidden;
+            background: #e9ecef;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Tombol kiri kanan */
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 5;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
+        }
+
+        /* Titik indikator */
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 7px;
+            z-index: 5;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+        }
+
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.25);
+        }
+
+
+        /* =========================
+           PROJECT CONTENT
+        ========================== */
+
+        .project-content {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-content .category {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .project-content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .project-features {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #555;
+        }
+
+        .project-features li {
+            margin-bottom: 5px;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech {
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #eef4ff;
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           TOOLS
+        ========================== */
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .tool {
+            background: white;
+            border: 1px solid #e5e5e5;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 18px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: #f0f2f5;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+
+            .project-gallery {
+                min-height: 300px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-content {
+                padding: 25px;
+            }
+
+            .project-content h3 {
+                font-size: 23px;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
-    <h1>Halo, Saya Jaya</h1>
-    <p>Selamat datang di portfolio saya.</p>
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<header>
+    <div class="container">
+        <nav>
+
+            <div class="logo">
+                Anggi<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h3>Hello, I'm</h3>
+
+                <h1>
+                    Anggi Syahputra
+                    <span>Jaya</span>
+                </h1>
+
+                <p>
+                    Lulusan S1 Teknologi Informasi dengan minat pada
+                    IT Support, Web Development, Sistem Informasi,
+                    dan teknologi digital.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        Lihat Project
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Hubungi Saya
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <!-- NANTI GANTI DENGAN FOTO PROFIL -->
+                <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
+                    alt="Profile"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>
+                Mengenal saya lebih dekat
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h3>Information Technology</h3>
+
+                <p>
+                    Saya merupakan lulusan S1 Teknologi Informasi
+                    Universitas 'Aisyiyah Yogyakarta dengan fokus
+                    pada Rekayasa Perangkat Lunak.
+                </p>
+
+                <p>
+                    Saya memiliki pengalaman dalam pengembangan
+                    aplikasi web, IT Support, troubleshooting
+                    komputer, desain digital, serta pengelolaan
+                    sistem informasi.
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+                <div class="info-box">
+                    <strong>Pendidikan</strong>
+                    <span>
+                        S1 Teknologi Informasi
+                    </span>
+                </div>
+
+                <div class="info-box">
+                    <strong>Fokus</strong>
+                    <span>
+                        IT Support & Web Development
+                    </span>
+                </div>
+
+                <div class="info-box">
+                    <strong>Tools</strong>
+                    <span>
+                        Laravel, PHP, MySQL, Git, Figma, Canva
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERTISE
+========================== -->
+
+<section id="expertise">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My Expertise</h2>
+
+            <p>
+                Kemampuan yang saya miliki
+            </p>
+
+        </div>
+
+
+        <div class="expertise-grid">
+
+
+            <div class="expertise-card">
+
+                <i class="fas fa-headset"></i>
+
+                <h3>IT Support</h3>
+
+                <p>
+                    Troubleshooting komputer, setting printer,
+                    backup data, instalasi software dan support
+                    kebutuhan teknis pengguna.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <i class="fas fa-code"></i>
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Pengembangan aplikasi web menggunakan PHP,
+                    Laravel, MySQL, HTML, CSS dan JavaScript.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-card">
+
+                <i class="fas fa-palette"></i>
+
+                <h3>UI & Design</h3>
+
+                <p>
+                    Membuat desain interface, poster, banner,
+                    konten digital dan prototype menggunakan
+                    Figma, Canva dan CorelDRAW.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Selected Works</h2>
+
+            <p>
+                Beberapa project dan pengalaman yang pernah saya kerjakan
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- =========================
+                 PROJECT 1
+            ========================== -->
+
+            <div class="project-card">
+
+
+                <!-- FOTO CAROUSEL -->
+
+                <div class="project-gallery">
+
+                    <div class="carousel-track">
+
+
+                        <!-- FOTO 1 -->
+                        <div class="carousel-slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80"
+                                alt="Project Inventory"
+                            >
+
+                        </div>
+
+
+                        <!-- FOTO 2 -->
+                        <div class="carousel-slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80"
+                                alt="Project Screenshot"
+                            >
+
+                        </div>
+
+
+                        <!-- FOTO 3 -->
+                        <div class="carousel-slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80"
+                                alt="Project Dashboard"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUTTON KIRI -->
+
+                    <button
+                        class="carousel-btn carousel-prev"
+                        onclick="moveSlide(this, -1)"
+                    >
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+
+                    <!-- BUTTON KANAN -->
+
+                    <button
+                        class="carousel-btn carousel-next"
+                        onclick="moveSlide(this, 1)"
+                    >
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+
+                    <!-- DOT -->
+
+                    <div class="carousel-dots">
+
+                        <span
+                            class="carousel-dot active"
+                            onclick="goToSlide(this, 0)"
+                        ></span>
+
+                        <span
+                            class="carousel-dot"
+                            onclick="goToSlide(this, 1)"
+                        ></span>
+
+                        <span
+                            class="carousel-dot"
+                            onclick="goToSlide(this, 2)"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT INFORMATION -->
+
+                <div class="project-content">
+
+                    <div class="category">
+                        Web Development
+                    </div>
+
+                    <h3>
+                        Sistem Persediaan Obat Berbasis Web
+                    </h3>
+
+                    <p>
+                        Aplikasi berbasis web untuk membantu
+                        pengelolaan persediaan obat pada
+                        Puskesmas Pembantu Desa Maur Lama.
+                    </p>
+
+
+                    <ul class="project-features">
+
+                        <li>
+                            Pengelolaan stok obat
+                        </li>
+
+                        <li>
+                            Transaksi stok masuk dan keluar
+                        </li>
+
+                        <li>
+                            Laporan persediaan
+                        </li>
+
+                        <li>
+                            Implementasi metode FEFO
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tech-list">
+
+                        <span class="tech">
+                            Laravel
+                        </span>
+
+                        <span class="tech">
+                            PHP
+                        </span>
+
+                        <span class="tech">
+                            MySQL
+                        </span>
+
+                        <span class="tech">
+                            XAMPP
+                        </span>
+
+                        <span class="tech">
+                            Git
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 PROJECT 2
+            ========================== -->
+
+            <div class="project-card">
+
+
+                <div class="project-gallery">
+
+                    <div class="carousel-track">
+
+                        <div class="carousel-slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1000&q=80"
+                                alt="Web Design Project"
+                            >
+
+                        </div>
+
+                        <div class="carousel-slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80"
+                                alt="Website Project"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="carousel-btn carousel-prev"
+                        onclick="moveSlide(this, -1)"
+                    >
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+
+                    <button
+                        class="carousel-btn carousel-next"
+                        onclick="moveSlide(this, 1)"
+                    >
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+
+                    <div class="carousel-dots">
+
+                        <span
+                            class="carousel-dot active"
+                            onclick="goToSlide(this, 0)"
+                        ></span>
+
+                        <span
+                            class="carousel-dot"
+                            onclick="goToSlide(this, 1)"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="category">
+                        UI / Web Design
+                    </div>
+
+                    <h3>
+                        Web Design & Prototype
+                    </h3>
+
+                    <p>
+                        Membuat desain interface dan prototype
+                        website untuk kebutuhan project dan
+                        pengembangan sistem.
+                    </p>
+
+                    <ul class="project-features">
+
+                        <li>
+                            User Interface Design
+                        </li>
+
+                        <li>
+                            Wireframe
+                        </li>
+
+                        <li>
+                            Prototype
+                        </li>
+
+                        <li>
+                            Responsive Design
+                        </li>
+
+                    </ul>
+
+                    <div class="tech-list">
+
+                        <span class="tech">
+                            Figma
+                        </span>
+
+                        <span class="tech">
+                            Canva
+                        </span>
+
+                        <span class="tech">
+                            CorelDRAW
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 EXPERIENCE 3
+            ========================== -->
+
+            <div class="project-card">
+
+
+                <div class="project-gallery">
+
+                    <div class="carousel-track">
+
+                        <div class="carousel-slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80"
+                                alt="IT Support"
+                            >
+
+                        </div>
+
+                        <div class="carousel-slide">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80"
+                                alt="IT Support Activity"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="carousel-btn carousel-prev"
+                        onclick="moveSlide(this, -1)"
+                    >
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+
+                    <button
+                        class="carousel-btn carousel-next"
+                        onclick="moveSlide(this, 1)"
+                    >
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+
+                    <div class="carousel-dots">
+
+                        <span
+                            class="carousel-dot active"
+                            onclick="goToSlide(this, 0)"
+                        ></span>
+
+                        <span
+                            class="carousel-dot"
+                            onclick="goToSlide(this, 1)"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="category">
+                        IT Support
+                    </div>
+
+                    <h3>
+                        IT Support & Magang
+                    </h3>
+
+                    <p>
+                        Pengalaman dalam membantu kebutuhan
+                        teknis dan operasional IT selama kegiatan
+                        pemagangan.
+                    </p>
+
+                    <ul class="project-features">
+
+                        <li>
+                            Troubleshooting komputer
+                        </li>
+
+                        <li>
+                            Setting printer
+                        </li>
+
+                        <li>
+                            Backup data
+                        </li>
+
+                        <li>
+                            Setting Zoom Meeting
+                        </li>
+
+                    </ul>
+
+                    <div class="tech-list">
+
+                        <span class="tech">
+                            IT Support
+                        </span>
+
+                        <span class="tech">
+                            Troubleshooting
+                        </span>
+
+                        <span class="tech">
+                            Hardware
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TOOLS & SKILLS
+========================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Tools & Skills</h2>
+
+            <p>
+                Tools yang biasa saya gunakan
+            </p>
+
+        </div>
+
+
+        <div class="tools-grid">
+
+            <span class="tool">HTML</span>
+            <span class="tool">CSS</span>
+            <span class="tool">JavaScript</span>
+            <span class="tool">PHP</span>
+            <span class="tool">Laravel</span>
+            <span class="tool">MySQL</span>
+            <span class="tool">Git</span>
+            <span class="tool">GitHub</span>
+            <span class="tool">Figma</span>
+            <span class="tool">Canva</span>
+            <span class="tool">CorelDRAW</span>
+            <span class="tool">CapCut</span>
+            <span class="tool">QGIS</span>
+            <span class="tool">XAMPP</span>
+            <span class="tool">Laragon</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h3>
+                Let's Connect
+            </h3>
+
+            <p>
+                Jangan ragu untuk menghubungi saya
+                untuk diskusi atau kesempatan kerja.
+            </p>
+
+
+            <div class="social-links">
+
+                <a
+                    href="mailto:anggisyahputrajaya@gmail.com"
+                    title="Email"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/anggi-syahputra-jaya-058b81283"
+                    target="_blank"
+                    title="LinkedIn"
+                >
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/04_syahputra"
+                    target="_blank"
+                    title="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+
+                <a
+                    href="https://www.tiktok.com/@hhh__211"
+                    target="_blank"
+                    title="TikTok"
+                >
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 Anggi Syahputra Jaya. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT CAROUSEL
+========================== -->
+
+<script>
+
+    /*
+    =====================================================
+    CAROUSEL PROJECT
+    =====================================================
+    */
+
+    function moveSlide(button, direction) {
+
+        const gallery =
+            button.closest(".project-gallery");
+
+        const track =
+            gallery.querySelector(".carousel-track");
+
+        const slides =
+            gallery.querySelectorAll(".carousel-slide");
+
+        const dots =
+            gallery.querySelectorAll(".carousel-dot");
+
+
+        let currentSlide =
+            parseInt(gallery.dataset.currentSlide || 0);
+
+
+        currentSlide += direction;
+
+
+        if (currentSlide < 0) {
+
+            currentSlide =
+                slides.length - 1;
+
+        }
+
+
+        if (currentSlide >= slides.length) {
+
+            currentSlide = 0;
+
+        }
+
+
+        track.style.transform =
+            `translateX(-${currentSlide * 100}%)`;
+
+
+        gallery.dataset.currentSlide =
+            currentSlide;
+
+
+        dots.forEach((dot, index) => {
+
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
+
+        });
+
+    }
+
+
+
+    /*
+    =====================================================
+    PINDAH LANGSUNG KE FOTO TERTENTU
+    =====================================================
+    */
+
+    function goToSlide(dot, index) {
+
+        const gallery =
+            dot.closest(".project-gallery");
+
+        const track =
+            gallery.querySelector(".carousel-track");
+
+        const dots =
+            gallery.querySelectorAll(".carousel-dot");
+
+
+        track.style.transform =
+            `translateX(-${index * 100}%)`;
+
+
+        gallery.dataset.currentSlide =
+            index;
+
+
+        dots.forEach((item, i) => {
+
+            item.classList.toggle(
+                "active",
+                i === index
+            );
+
+        });
+
+    }
+
+
+
+    /*
+    =====================================================
+    SWIPE / GESER DENGAN MOUSE & TOUCH
+    =====================================================
+    */
+
+    document
+        .querySelectorAll(".project-gallery")
+        .forEach(gallery => {
+
+
+            let startX = 0;
+
+
+            gallery.addEventListener(
+                "touchstart",
+                function(e) {
+
+                    startX =
+                        e.touches[0].clientX;
+
+                }
+            );
+
+
+            gallery.addEventListener(
+                "touchend",
+                function(e) {
+
+                    const endX =
+                        e.changedTouches[0].clientX;
+
+                    const difference =
+                        startX - endX;
+
+
+                    if (Math.abs(difference) > 50) {
+
+                        const direction =
+                            difference > 0 ? 1 : -1;
+
+
+                        const nextButton =
+                            direction === 1
+                                ? gallery.querySelector(".carousel-next")
+                                : gallery.querySelector(".carousel-prev");
+
+
+                        moveSlide(
+                            nextButton,
+                            direction
+                        );
+
+                    }
+
+                }
+            );
+
+
+            /*
+            SWIPE DENGAN MOUSE
+            */
+
+            let mouseStart = 0;
+
+
+            gallery.addEventListener(
+                "mousedown",
+                function(e) {
+
+                    mouseStart =
+                        e.clientX;
+
+                }
+            );
+
+
+            gallery.addEventListener(
+                "mouseup",
+                function(e) {
+
+                    const mouseEnd =
+                        e.clientX;
+
+                    const difference =
+                        mouseStart - mouseEnd;
+
+
+                    if (Math.abs(difference) > 50) {
+
+                        const direction =
+                            difference > 0 ? 1 : -1;
+
+
+                        const nextButton =
+                            direction === 1
+                                ? gallery.querySelector(".carousel-next")
+                                : gallery.querySelector(".carousel-prev");
+
+
+                        moveSlide(
+                            nextButton,
+                            direction
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+</script>
 
 </body>
 </html>
